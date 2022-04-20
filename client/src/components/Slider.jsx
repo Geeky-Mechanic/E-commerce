@@ -2,7 +2,7 @@ import { ArrowBackOutlined, ArrowForwardOutlined } from '@mui/icons-material';
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import {sliderItems} from '../data'
-import { mobile } from '../responsive';
+import { desktop, desktopXlg, laptop, mobile, tablet } from '../responsive';
 
 const Container= styled.div`
 width: 100%;
@@ -46,7 +46,7 @@ display: flex;
 align-items: center;
 width: 100vw;
 height: 100vh;
-background-color: #${props => props.bg}
+background-color: #${props => props.bg};
 `;
 
 /* ---->  Images  <---- */
@@ -54,10 +54,12 @@ background-color: #${props => props.bg}
 const ImgContainer = styled.div`
 flex: 1;
 height: 100%;
+${tablet({display: "none"})};
 `;
 
 const Image = styled.img`
 height: 80%;
+${desktopXlg({width: "100%", objectFit: "cover"})};
 `;
 
 /* ---->  Info  <---- */
@@ -84,6 +86,7 @@ font-size: 20px;
 background-color: transparent;
 cursor: pointer;
 `;
+
 
 const Slider = () => {
 

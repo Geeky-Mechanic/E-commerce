@@ -10,9 +10,10 @@ const authRoute = require('./routes/auth');
 const productRoute = require('./routes/product');
 const cartRoute = require('./routes/cart');
 const orderRoute = require('./routes/order');
+const stripeRoute = require('./routes/stripe')
 
 mongoose.connect(process.env.MONGO_URL)
-    .then(() => console.log("connection succesfull"))
+    .then(() => console.log("DB connected succesfully"))
     .catch((err) => console.log(err));
 
 const app = express();
@@ -23,8 +24,10 @@ app.use("/api/users", userRoute);
 app.use("/api/products", productRoute);
 app.use("/api/carts", cartRoute);
 app.use("/api/orders", orderRoute);
+app.use("/api/checkout", stripeRoute)
 
+const port = process.env.PORT || 5000 ;
 
-app.listen(process.env.PORT || 5000, () => {
-    console.log('server started');
+app.listen(port, () => {
+    console.log(`server started on port : ${port}`);
 });

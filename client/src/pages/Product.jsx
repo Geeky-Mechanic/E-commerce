@@ -135,7 +135,6 @@ const Product = () => {
             try {
                 const res = await publicRequest.get(`products/find/${id}`);
                 setProduct(res.data);
-                console.log(res);
             }catch(err){
                 console.log(err);
             }
@@ -156,7 +155,7 @@ const Product = () => {
     /* ---->  update cart  <---- */
 
     const handleClick = ()=> {
-        dispatch(addProduct({product, quantity}));
+        dispatch(addProduct({...product, quantity, color, size}));
     }
 
   return (

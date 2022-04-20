@@ -21,8 +21,8 @@ const Products = ({cat, filters, sort}) => {
       try{
         const res = await axios.get(
           cat
-          ? `http://192.168.0.113:5000/api/products?category=${cat}`
-          : "http://192.168.0.113:5000/api/products");
+          ? `http://192.168.0.104:5000/api/products?category=${cat}`
+          : "http://192.168.0.104:5000/api/products");
         setProducts(res.data);
       }catch(err){
 

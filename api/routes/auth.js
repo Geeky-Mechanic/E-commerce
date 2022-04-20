@@ -43,12 +43,12 @@ router.post("/login", async (req,res) => {
         const user = await User.findOne({username: req.body.username});
         /* ---->  Error if no user  <---- */
         if(!user){
-            return res.status(401).json("Wrong username or password");
+            return res.status(401).json("Wrong username" + req.body.username);
         }
         /* ---->  Decrypt stored password to compare with entered password  <---- */
         const decryptedPassword = Decrypt(user.password, process.env.PASS_SECRET);
         if(decryptedPassword !== req.body.password){
-             return res.status(401).json("Wrong username or password");
+             return res.status(401).json("Wrong password");
         }
 
         /* ---->  Create a token (cookie?) <---- */
