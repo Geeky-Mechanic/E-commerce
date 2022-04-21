@@ -38,9 +38,9 @@ useEffect(()=> {
 
   return (
       <Container>
-        <Topbar />
+        {admin && <Topbar />}
         <Body>
-          <Sidebar />
+          {admin && <Sidebar />}
           <Routes>
             <Route exact path="/" element={<Home />}/>
             <Route exact path="/login" element={<Login />}/>
