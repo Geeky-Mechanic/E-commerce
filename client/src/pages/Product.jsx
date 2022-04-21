@@ -133,7 +133,7 @@ const Product = () => {
     useEffect(()=> {
         const getProduct = async ()=> {
             try {
-                const res = await publicRequest.get(`products/find/${id}`);
+                const res = await publicRequest.get(`/products/find/${id}`);
                 setProduct(res.data);
             }catch(err){
                 console.log(err);
