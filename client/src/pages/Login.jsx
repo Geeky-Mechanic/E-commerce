@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mobile, mobilesm, laptop } from '../responsive';
+import { mobile, laptop } from '../responsive';
 import { useState } from 'react';
 import { login } from '../redux/apiCalls';
 import { useDispatch, useSelector } from 'react-redux';

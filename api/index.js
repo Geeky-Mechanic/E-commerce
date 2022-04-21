@@ -10,7 +10,8 @@ const authRoute = require('./routes/auth');
 const productRoute = require('./routes/product');
 const cartRoute = require('./routes/cart');
 const orderRoute = require('./routes/order');
-const stripeRoute = require('./routes/stripe')
+const stripeRoute = require('./routes/stripe');
+
 mongoose.connect(process.env.MONGO_URL)
     .then(() => console.log("DB connected succesfully"))
     .catch((err) => console.log(err));
@@ -30,3 +31,5 @@ const port = process.env.PORT || 5000 ;
 app.listen(port, () => {
     console.log(`server started on port : ${port}`);
 });
+
+//https://api.jeremychampagne.xyz/api
