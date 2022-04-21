@@ -1,9 +1,6 @@
 import axios from 'axios';
-import dotenv from 'dotenv';
-dotenv.config();
 
-const baseUrl = process.env.BASE_URL;
-
+const baseUrl = process.env.REACT_APP_BASE_URL;
 //const TOKEN = JSON.parse(JSON.parse(localStorage.getItem("persist:root"))?.currentUser)?.accessToken;
 const user = JSON.parse(localStorage.getItem("persist:root"))?.user;
 const currentUser = user && JSON.parse(user).currentUser;
